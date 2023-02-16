@@ -1,33 +1,53 @@
-import style from 'styled-components';
+import styled from 'styled-components';
 
-export const Container =  style.div`
+export const Container =  styled.div`
     width: 100%;
     max-width: 1140px;
     margin: auto;
     display: flex;
     justify-content: space-around;
     padding: 20px 20px;
-    font-family: sans-serif
+    font-family: sans-serif;
+
+    @media(max-width:750px){
+        flex-direction: column;
+    }
 `;
 
-export const Info =  style.div`
-    display: flex;
-    flex-direction: column;
-    
-`;
-
-export const InfoArea =  style.div`
-    display: flex;
-    flex-direction: column;
+export const Title = styled.h1`
     text-align: center;
+    color: #101C40;
 `;
 
-export const Title =  style.h1`
-    color: royalblue;
+export const Info = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: auto;
+
 `;
 
-export const Grid =  style.div`
-    background-color: #ff0000;
+export const InfoArea = styled.div`
+   
+`;
+
+export const GridArea = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
     width: 100%;
-    margin-left:40px
+    @media(max-width:750px){
+        margin-top: 25px;
+    }
+`;
+export const Grid = styled.div`
+    width: 100%;
+    max-width: 430px;
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 10px;
+    @media(max-width:700px){
+        grid-template-columns: repeat(3,1fr);
+    }
 `;
